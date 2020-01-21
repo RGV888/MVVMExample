@@ -12,6 +12,6 @@ import retrofit2.http.Query;
 public interface RetrofitApis {
 
     @GET(AppAPIUrls.API_POSTS_URL)
-    Call<StroryResponse> getStorysList(@Query("tags") String taga,@Query("pageNo") int pageNo);
+    Call<StroryResponse> getStorysList(@Query("tags") String taga,@Query("page") int pageNo);
 
 }

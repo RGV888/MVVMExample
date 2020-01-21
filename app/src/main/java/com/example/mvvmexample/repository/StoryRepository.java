@@ -40,7 +40,7 @@ public class StoryRepository {
             return;
         }
 
-        retrofitApis.getStorysList("storys", pageNo).enqueue(new Callback<StroryResponse>() {
+        retrofitApis.getStorysList("story", pageNo).enqueue(new Callback<StroryResponse>() {
             @Override
             public void onResponse(Call<StroryResponse> call, Response<StroryResponse> response) {
 

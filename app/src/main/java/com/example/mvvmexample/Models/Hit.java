@@ -2,15 +2,15 @@ package com.example.mvvmexample.Models;
 
 public class Hit {
 
-    private String createdAt;
+    private String created_at;
     private String title;
 
-    public String getCreatedAt() {
-        return createdAt;
+    public void setCreated_at(String created_at) {
+        this.created_at = created_at;
     }
 
-    public void setCreatedAt(String createdAt) {
-        this.createdAt = createdAt;
+    public String getCreated_at() {
+        return created_at;
     }
 
     public String getTitle() {
