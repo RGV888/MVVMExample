@@ -36,18 +36,27 @@ public class MainActivity extends AppCompatActivity {
         storyViewModel= ViewModelProviders.of(this).get(StoryViewModel.class);
         storyList=new ArrayList<>();
         RecylerViewSetup();
+        storyViewModel.callApiForStorys(1);
+        updateDataObserver();
 
+
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                storyList.clear();
+                mAdapter.notifyDataSetChanged();
+                storyViewModel.callApiForStorys(1);
+
+            }
+        });
 
 
     }
 
     private void RecylerViewSetup() {
-
-        mAdapter=new StoryListAdapter(MainActivity.this);
+        mAdapter=new StoryListAdapter(MainActivity.this,storyList);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(mAdapter);
-
-        updateDataObserver();
     }
 
     private void updateDataObserver() {

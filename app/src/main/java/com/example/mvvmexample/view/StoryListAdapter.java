@@ -19,8 +19,9 @@ public class StoryListAdapter extends RecyclerView.Adapter<StoryListAdapter.Stor
 
     private List<Hit> storyList;
     private Context context;
-    public StoryListAdapter(Context context){
+    public StoryListAdapter(Context context,List<Hit> storyList){
         this.context=context;
+        this.storyList=storyList;
     }
 
 //    public void updateList(List<Hit> storyList){

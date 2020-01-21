@@ -36,9 +36,13 @@ public class StoryRepository {
 
     public void callForStoryList(int pageNo) {
 
-        if (pageNo > maxPageNo) {
-            return;
+        if(pageNo!=1){
+            if (pageNo > maxPageNo) {
+                return;
+            }
         }
+
+
 
         retrofitApis.getStorysList("story", pageNo).enqueue(new Callback<StroryResponse>() {
             @Override
